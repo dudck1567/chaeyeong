@@ -1,0 +1,558 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Sacramento&family=Lobster&family=Noto+Sans+KR&display=swap');
+/* font-family: 'Sacramento', cursive; 로고 글씨 */
+/* font-family: 'Lobster', cursive; 메인 글씨 */
+/* font-family: 'Noto Sans', sans-serif; 영문 기본 글씨 */
+/* font-family: 'Noto Sans KR', sans-serif; 한글 기본 글씨 */
+.row{ max-width: 1200px; margin:0px auto; padding: 0 10px;}
+.article1, .article2, .article3, .article4 {font-family: 'Noto Sans', sans-serif;}
+
+
+#header{
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    left:0; top:0;
+    color:#FF250F;
+    font-family: 'Lobster', cursive;
+    border-bottom: 2px solid #FF250F;
+    z-index: 99;
+    padding: 0px 20px;
+    transition: all 0.5s;
+} 
+#header.on{
+    color:#FAE4C9;
+    background: #FF250F;
+    display: block;
+    transition: all 0.s; 
+}
+#header > div{ 
+    position: relative;
+
+}
+#header .logo{
+    font-size: 30px;
+    margin-top: 15px;
+}
+#header .nav{
+    position: absolute;
+    bottom:8px; right: 0;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+#header .nav ul li{
+    display:inline-block;
+    padding-left: 70px;
+}
+/* #header .nav ul li:hover a{
+    transition: all 0.3s;
+}
+#header .nav ul li:hover a{
+    color: #fff;
+} */
+.nav li.on{
+    color: #fff;
+}
+
+/* main */
+.article1{
+    position: relative;
+    height: 100vh;
+    border-bottom: 30px solid #FF250F;
+} 
+.article1 > div:last-child{ 
+    top:0; left:0; bottom:0; right:0;
+    position: absolute;
+    font-family: 'Lobster', cursive;
+    background:#FF250f;
+    z-index: 1;
+    overflow: hidden;
+}
+.article1 > div::after{
+    content:'';
+    position: absolute;
+    top:5%; left:10%; right:10%; bottom:0%;
+    border-radius: 50%;
+    z-index: 2;
+}
+.article1 > div.on::after{
+    animation: ani 3s both ease;
+    background: #FAE4C9;
+}
+@keyframes ani{
+    0%{transform: scale(0);}
+    100%{transform: scale(2);} 
+}
+
+.article1 .maintxt{
+    font-size: 130px;
+    position:absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 1.5;
+    color: #FF250f;
+    z-index: 3;
+}
+.article1 .maintxt h1{
+    animation: pulse 2s both 0s infinite ease-in-out;
+}
+.article1 .maintxt p{
+    font-size: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+.subtxt h2{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Lobster', cursive;
+    padding: 90px 0 50px;
+    color:  #FF250f;
+}
+
+/* About me */
+.article2{
+    padding-bottom: 70px;
+}
+.article2 .image{
+    float: left;
+    margin-left: 180px;
+    margin-top: 45px;
+    text-align: center;
+    vertical-align: middle;
+}
+.article2 .image img{
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    text-align: center;
+    border: 5px solid #ffc222;
+}
+.article2 ul{
+    float:right;
+    margin-right: 110px;
+    margin-top:15px;
+}
+.article2 h3{
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: px;
+    margin: 30px 0 15px;
+    padding-left: 30px;
+    color: #222;
+    position: relative;
+}
+.article2 h3::before{
+    content:'';
+    width:13px; height: 13px;
+    border:3px solid  #ffc222;
+    border-radius: 50%;
+    position: absolute;
+    top:1px; left:0px;
+}
+.article2 .image div:nth-of-type(1) h3{
+    padding-left:0;
+}
+.article2 .image div:nth-of-type(1) h3::before{
+    border:none;
+}
+.article2 p{
+    line-height: 1.5;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    color: #666;    
+}
+
+
+/* Tool&Skill */
+.article3{
+    height: 100vh;
+    background:#f9f8f6;
+}
+.article3 .skillcontainer{
+    height: calc(100% - 180px);
+    font-size: 18px;
+    padding: 0 20px;
+}
+.article3 .skillcontainer > div{
+    width: 100%; height: 13%;
+    /* border: 1px solid #333; */
+    position: relative;
+}
+.article3 .skillcontainer > div > p{
+    position: absolute;
+    left:0; top: 50%;
+    transform: translateY(-50%);
+    color: #222;
+    font-weight: bold;
+    padding-left: 30px;
+}
+.article3 .skillcontainer > div > p::before{
+content:'';
+width:13px; height: 13px;
+border:3px solid #ffc222;
+border-radius: 50%;
+position: absolute;
+top:1px; left:0;
+}
+.article3 .skillcontainer .score{
+    width: calc(100% - 150px); height: 55%;
+    background: #FAE4C9;
+    position: absolute;
+    left: 150px; top: 50%; 
+    transform: translateY(-50%);
+    border-radius: 50px;
+    overflow: hidden;
+
+}
+.article3 .skillcontainer .score .myscore{
+    height:100%;
+    border-radius: 50px;
+    background: linear-gradient(to right,#FAE4C9, #FF250F);
+    font-family: 'Lobster', cursive;
+    width: 0%;
+    position: absolute;
+    text-align: right;
+    color: #fff;
+    opacity:0;
+    padding: 0 20px 0 0;
+}
+.article3 .skillcontainer .score .myscore span{
+    position:absolute;
+    top:50%; right:20px;
+    transform: translateY(-50%);
+}
+
+.article3 .skillcontainer.on .illust .myscore{
+    animation: illustani 1.5s both 0s;
+}
+
+.article3 .skillcontainer.on .photoshop .myscore{
+    animation: photoshopani 1.5s both 0.2s;
+}
+
+.article3 .skillcontainer.on .html .myscore{
+    animation: htmlani 1.5s both 0.4s;
+}
+
+.article3 .skillcontainer.on .css .myscore{
+    animation: cssani 1.5s both 0.6s;
+}
+
+.article3 .skillcontainer.on .java .myscore{
+    animation: javaani 1.5s both 0.8s;
+}
+
+.article3 .skillcontainer.on .jquery .myscore{
+    animation: jqueryani 1.5s both 1.0s;
+}
+
+.article3 .skillcontainer.on .react .myscore{
+    animation: reactani 1.5s both 1.2s;
+}
+
+@keyframes illustani{
+    0%{width: 0; opacity: 0;}
+    100%{width: 91%; opacity: 1;}
+}
+@keyframes photoshopani{
+    0%{width: 0; opacity: 0;}
+    100%{width: 86%; opacity: 1;}
+}
+@keyframes htmlani{
+    0%{width: 0; opacity: 0;}
+    100%{width: 80%; opacity: 1;}
+}
+@keyframes cssani{
+    0%{width: 0; opacity: 0;}
+    100%{width: 72%; opacity: 1;}
+}
+@keyframes javaani{
+    0%{width: 0; opacity: 0;}
+    100%{width: 58%; opacity: 1;}
+}
+@keyframes jqueryani{
+    0%{width: 0; opacity: 0;}
+    100%{width: 64%; opacity: 1;}
+}
+@keyframes reactani{
+    0%{width: 0; opacity: 0;}
+    100%{width: 55%; opacity: 1;}
+}
+
+
+/* Project */
+.article4{
+    background:#fdf1e4;
+    height: 100vh;
+    position: relative;
+}
+.article4 .projectBox{display:none; position:relative;}
+.article4 .projectBox.on{display:block;}
+.article4 .projectBox ul > div{
+    height:100%;
+}
+.article4 .projectBox .icon{
+    font-size:30px;
+    text-align: center;
+    color:#FF250F;
+    cursor: pointer;
+}
+.article4 .projectBox .icon p{
+    font-size:18px; font-weight: bold;
+}
+.article4 .projectBox ul{margin-top:20px;}
+.article4 .projectBox ul li{ 
+    float: left;
+    text-align: center;
+    width:40%;
+    margin:1% 5%;
+    overflow: hidden;
+    position:relative;
+}
+
+.article4 .projectBox .projectTxt{
+    opacity:0;
+    width:100%;
+    position:absolute;
+    top:53%; left:50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s;
+}
+.article4 .projectBox li:hover .projectTxt{opacity:1}
+.article4 .projectBox ul li div h4{font-size:20px; color:#fff;font-weight: bold;  margin-bottom:10px;}
+.article4 .projectBox ul li div p{color:#fff;}
+.article4 .projectBox ul li div a{
+    padding: 10px 15px; background: #ffc222; color:#fff; display:inline-block;
+    font-weight: bold;
+    margin-top:20px;
+    border-radius: 20px;
+}
+
+
+.article4 .projectPic li:nth-child(2) img.on, .article4 .projectPic li:nth-child(3) img.on
+{opacity: 1; transition: all 0.5s; position:absolute; top:0; left:0;}
+.article4 .projectPic li:nth-child(2) img, .article4 .projectPic li:nth-child(3) img
+{opacity: 0; transition: all 0.5s;}
+.article4 .projectBox ul li:hover img.on{opacity: 0;}
+.article4 .projectBox ul li:hover img{opacity: 1;}
+
+
+
+.article4 .projectBox ul li .projectImg{
+    width:100%;
+    transition: all 0.3s;
+}
+.article4 .projectBox ul li:hover .projectImg{transform: scale(1.02); position: relative;}
+.article4 .projectBox ul li .projectImg::after{
+    content:'';
+    background: #000;
+    opacity: 0;
+    position:absolute;
+    left:0; right:0; top:0; bottom:0;
+    transition: all 0.3s;
+}
+.article4 .projectBox ul li:hover .projectImg::after{
+    opacity: 0.4;
+}
+.article4 .image{
+    position:absolute; top:170px; left:50%; 
+    transform: translateX(-50%); 
+}
+.article4 .click{
+    font-family: 'Lobster', cursive;
+    font-size:24px;
+    position:absolute;
+    left:48.3%; bottom:27%;
+    color: #FF250F;
+}
+.article4 .image img{display:none;}
+.article4 .image img.on{display:block;}
+
+
+.bounce-top {
+	animation: bounce-top 0.8s both;
+}
+@keyframes bounce-top {
+    0% {
+      transform: translateY(-45px);
+      animation-timing-function: ease-in;
+      opacity: 1;
+    }
+    24% {
+      opacity: 1;
+    }
+    40% {
+      transform: translateY(-24px);
+      animation-timing-function: ease-in;
+    }
+    65% {
+      transform: translateY(-12px);
+      animation-timing-function: ease-in;
+    }
+    82% {
+      transform: translateY(-6px);
+      animation-timing-function: ease-in;
+    }
+    93% {
+      transform: translateY(-4px);
+      animation-timing-function: ease-in;
+    }
+    25%,
+    55%,
+    75%,
+    87% {
+      transform: translateY(0px);
+      animation-timing-function: ease-out;
+    }
+    100% {
+      transform: translateY(0px);
+      animation-timing-function: ease-out;
+      opacity: 1;
+    }
+  }
+  
+/* article5 image */
+.article5{
+    width: 100%; height: 40vh;
+    background: url(../image/candy.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment:fixed;
+    position: relative;
+}
+.article5::before{
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: #FAE4C9;
+    opacity:0;
+}
+
+
+/* contact me */
+/* .article6{height: 100vh;} */
+.article6 legend{
+    display:none;
+}
+.article6 {
+    width: 100%;
+    display: table;
+}
+.article6 > div{
+    display: table-cell;
+    vertical-align: middle;
+}
+.article6 .subtxt h2{
+    padding-top:0;
+}
+.article6{height: 100vh;
+    background: #FAE4C9;
+    border-top: 30px solid #FF250F;
+    border-bottom: 30px solid #FF250F;
+}
+.form1{
+    width:80%; 
+    /* border: 1px solid #ddd; */
+    margin: 0 auto;
+}
+.form1 p{
+    padding-bottom: 2.5%;
+}
+.form1 p:nth-of-type(6){
+    padding-bottom: 0%;
+}
+.form1 p:nth-of-type(4) label{
+    vertical-align: top;
+    margin-top: 5px;
+}
+.form1 p label{
+    display: inline-block;
+    width : 14%;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #222;
+    position: relative;
+    padding-left: 30px;
+}
+.form1 p label::before{
+    content:'';
+    width:13px; height: 13px;
+    border:3px solid #ffc222;
+    border-radius: 50%;
+    position: absolute;
+    top:1px; left:0px;
+}
+.form1 p input{
+    border: none;
+    background: #fff;
+    border-radius: 50px;
+    padding: 15px 15px;
+    outline:none;
+}
+.form1 p textarea{
+    width:84%; height: 150px;
+    border:none;
+    border-radius: 30px;
+    padding: 20px 20px;
+    resize: none;
+    outline:none;
+}
+.form1 p:nth-of-type(5) input{
+    background: none;
+    border-radius: 0;
+    padding-left: 5px;
+}
+#contact .form1 p:nth-of-type(6){
+    text-align: center;
+}
+#contact .form1 p:nth-of-type(6) button{
+    padding: 15px 25px;
+    font-size: 18px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    color: #fff;
+    border:0;
+    outline: none;
+    cursor: pointer;
+}
+#contact .form1 p:nth-of-type(6) button[type=submit]:hover{
+    background:#ffc222;
+}
+#contact .form1 p:nth-of-type(6) button[type=reset]:hover{
+    background: #ffc222;
+}
+#contact .form1 p:nth-of-type(6) button[type=submit]{
+    background: #FF250F;
+    transition: background 0.5s;
+}
+#contact .form1 p:nth-of-type(6) button[type=reset]{
+    background: #FF250F;
+    transition: background 0.5s;
+}
+
+/* 시작 로딩 화면 */
+.introbox{
+    position: fixed;
+    top:0%; left:0%; bottom:0%; right:0%;
+    background: #FF250F;
+    z-index:9999;
+
+} 
+
+.introbox i{
+    font-size:60px;
+    position:absolute;
+    color:#FAE4C9;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1.2s ease-in-out infinite;
+}
+@keyframes spin{
+    from{transform: rotate(0);}
+    to{transform: rotate(360deg);}
+} 
